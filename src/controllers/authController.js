@@ -50,28 +50,9 @@ exports.login = async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-
-    // const { email, password } = req.body;
-
-    // User.findOne({
-    //     where: { email: email },
-    // }).then((user) => {
-    //     if (!user)
-    //         throw new Error("Cannot Login 1");
-    //     return Promise.all([bcrypt.compare(password, user.password), Promise.resolve(user)])
-    // }).then(([pwOk, user]) => {
-    //     if (!pwOk)
-    //         throw new Error("Cannot Login 2")
-    //     const payload = {
-    //         id: user.id,
-    //         name: user.name
-    //     }
-    //     const token = jwt.sign(payload, `${process.env.JWT_SECRETKEY}`, { expiresIn: '30d' })
-    //     res.json({ token: token })
-    // }).catch(next)
 };
 
 exports.getMe = (req, res, next) => {
-    const { id, firstName } = req.user
-    res.json({ id, firstName })
+    const { id, firstName, lastName, email, role } = req.user
+    res.json({ id, firstName, lastName, email, role })
 }
