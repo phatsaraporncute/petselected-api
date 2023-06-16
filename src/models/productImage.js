@@ -2,15 +2,15 @@ module.exports = (sequelize, DataTypes) => {
     const ProductImage = sequelize.define('ProductImage', {
         mainImg: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         descriptionImg: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         howtoImg: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
     },
         {
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
                 name: 'productId',
                 allowNull: false
             },
-            onDelete: 'RESTRICT'
+            onDelete: 'CASCADE'
         })
 
     }

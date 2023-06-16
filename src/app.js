@@ -7,6 +7,7 @@ const rateLimit = require('express-rate-limit')
 
 const authRoute = require('./routes/auth-route')
 const adminProductRoute = require('./routes/adminProduct-route')
+const guestRoute = require('./routes/guest-route')
 // const friendRoute = require('./routes/friend-route')
 // const postRoute = require('./routes/post-route')
 
@@ -31,8 +32,9 @@ app.use(helmet())
 app.use(express.json())
 
 app.use('/auth', authRoute)
+app.use('/guest', guestRoute)
 app.use('/admin/product', authenticate, adminProductRoute)
-// app.use('/friends', authenticate, friendRoute)
+// app.use('/cart',authenticate,)
 // app.use('/posts', authenticate, postRoute)
 
 app.use(notFoundMiddleware)

@@ -33,12 +33,12 @@ exports.login = async (req, res, next) => {
         })
 
         if (!user) {
-            throw new Error("Cannot Login 1");
+            throw new Error("Cannot Login");
         }
         const pwOk = await bcrypt.compare(password, user.password)
 
         if (!pwOk) {
-            throw new Error("Cannot Login 2")
+            throw new Error("Cannot Login")
         }
         const payload = {
             id: user.id,
