@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const Order = sequelize.define('Order', {
         address: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         totalPrice: {
             type: DataTypes.DECIMAL,
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         paymentSlip: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         status: {
             type: DataTypes.ENUM('PENDING', 'SUCCESS', 'WAITING', 'COMPLETED'),
